@@ -1,0 +1,45 @@
+<div class="contain">
+    <form class="form vertical-center" [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <div class="form-title"><span>CONTACT FORM - Ethan Gonzales</span></div>
+        <div class="title-2"><span>REACTIVE FORM</span></div>
+        <div class="input-container">
+          <input placeholder="Input any name" type="text" name="userName" class="input-mail input-box" formControlName = "userName"/>
+          <span> </span>
+        </div>
+      
+        <section class="bg-stars">
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+        </section>
+
+        <div class="input-container">
+            <input placeholder="Input any email" type="email" name="userEmail" class="input-mail input-box" formControlName = "userEmail"/>
+            <span> </span>
+        </div>
+      
+        <div class="input-container">
+          <input placeholder="Password" type="password" name="userPass" class="input-pwd" formControlName = "userPass"/>
+        </div>
+
+        <div class="input-container">
+            <input placeholder="Input any message" type="text" name="userMessage" class="input-mail input-box" formControlName = "userMessage"/>
+            <span> </span>
+        </div>
+
+        <div class="submit">
+          <input type="submit" class="btn" value="Submit">
+        </div>
+      
+        <div *ngIf="submitted">
+            <p class="signup-link">You have entered (name): {{ userName }}</p>
+            <p class="signup-link">You have entered (email): {{ userEmail }}</p>
+            <p class="signup-link">You have entered (password): {{ userPass }}</p>
+            <p class="signup-link">You have entered (message): {{ userMessage }}</p>
+        </div>
+
+      </form>
+</div>
+
+

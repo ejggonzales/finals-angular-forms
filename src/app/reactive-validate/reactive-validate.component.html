@@ -1,0 +1,52 @@
+<!-- <p>reactive-validate works!</p> -->
+<div class="contain">
+    <form class="form vertical-center" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-title"><span>CONTACT FORM - Ethan Gonzales</span></div>
+        <div class="title-2"><span>REACTIVE VALIDATION</span></div>
+        <div class="input-container">
+          <input placeholder="Input any name" type="text" name="userName" class="input-mail input-box" formControlName = "userName"/>
+          <span> </span>
+        </div>
+      
+        <section class="bg-stars">
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+        </section>
+
+        <div class="input-container">
+            <input placeholder="Input any email" type="email" id="email" name="userEmail" class="input-mail input-box" formControlName = "userEmail"/>
+            <div *ngIf="loginForm.controls['userEmail'].invalid && loginForm.controls['userEmail'].touched" class="error">
+                Email is required and must be a valid email address.
+            </div>
+            <span> </span>
+        </div>
+      
+        <div class="input-container">
+          <input placeholder="Password" type="password" id="password" name="userPass" class="input-pwd" formControlName = "userPass"/>
+        </div>
+
+        <div class="input-container">
+            <input placeholder="Input any message" type="text" name="userMessage" class="input-mail input-box" formControlName = "userMessage"/>
+            <div *ngIf="loginForm.controls['userPass'].invalid && loginForm.controls['userPass'].touched" class="error">
+                Password is required and must be at least 6 characters long
+            </div>
+            <span> </span>
+        </div>
+
+        <div class="">
+          <input type="submit" class="submit" value="Submit" [disabled]="loginForm.invalid">
+        </div>
+      
+        <!-- <div *ngIf="submitted">
+            <p class="signup-link">You have entered (name): {{ userName }}</p>
+            <p class="signup-link">You have entered (email): {{ userEmail }}</p>
+            <p class="signup-link">You have entered (password): {{ userPass }}</p>
+            <p class="signup-link">You have entered (message): {{ userMessage }}</p>
+        </div> -->
+
+      </form>
+</div>
+
+

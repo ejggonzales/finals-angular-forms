@@ -1,0 +1,42 @@
+<div class="contain">
+    <form class="form vertical-center" (ngSubmit)="onSubmit()">
+        <div class="form-title"><span>CONTACT FORM - Ethan Gonzales</span></div>
+        <div class="title-2"><span>TEMPLATE DRIVEN</span></div>
+        <div class="input-container">
+          <input placeholder="Input any name" type="text" name="username" class="input-mail input-box" [(ngModel)]="anyname"/>
+          <span> </span>
+        </div>
+      
+        <section class="bg-stars">
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+        </section>
+
+        <div class="input-container">
+            <input placeholder="Input any email" type="email" name="email" class="input-mail input-box" [(ngModel)]="anyemail"/>
+            <span> </span>
+        </div>
+      
+        <div class="input-container">
+          <input placeholder="Password" type="password" name="password" class="input-pwd" [(ngModel)]="anypass"/>
+        </div>
+
+        <div class="input-container">
+            <input placeholder="Input any message" type="text" name="message" class="input-mail input-box" [(ngModel)]="anymessage"/>
+            <span> </span>
+        </div>
+
+        <div class="submit">
+          <input type="submit" class="btn" value="Submit" [disabled]="!anyname" [disabled]="!anyemail" [disabled]="!anypass" [disabled]="!anymessage">
+        </div>
+      
+        <p *ngIf="submitted" class="signup-link">You have entered (name): {{ anyname }}</p>
+        <p *ngIf="submitted" class="signup-link">You have entered (email): {{ anyemail }}</p>
+        <p *ngIf="submitted" class="signup-link">You have entered (password): {{ anypass }}</p>
+        <p *ngIf="submitted" class="signup-link">You have entered (message): {{ anymessage }}</p>
+      </form>
+</div>
+
+
